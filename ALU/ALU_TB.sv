@@ -1,41 +1,49 @@
-// Testbench module for the ALU with various operations
+// Testbench for both ALU modules
 module ALU_Tb ();
+    logic [31:0] a, b;
+    logic [2:0] alucontrol;
+    logic carry1, zero1, negative1, overflow1;
+    logic carry2, zero2, negative2, overflow2;
+    logic [31:0] results1, results2;
 
-  // Declare logic signals for the inputs and outputs of the DUT (Device Under Test)
-  logic [31:0] a, b;                 // 32-bit inputs A and B
-  logic [2:0] alucontrol;            // 3-bit control signal for the ALU
-  logic carry, zero, negative, overflow;  // Flags for the ALU operation
-  logic [31:0] results;              // 32-bit result from the ALU
+    // Instantiation of ALU_UsingAssign
+    ALU_UsingAssign alu_assign(
+        .A(a),
+        .B(b),
+        .ALUControl(alucontrol),
+        .Carry(carry1),
+        .Zero(zero1),
+        .Negative(negative1),
+        .Overflow(overflow1),
+        .ALUResult(results1)
+    );
 
-  // Instantiate the ALU module (DUT)
-  ALU dut (
-    .A(a), 
-    .B(b), 
-    .ALUControl(alucontrol), 
-    .Carry(carry), 
-    .Negative(negative), 
-    .Overflow(overflow), 
-    .Zero(zero), 
-    .ALUResult(results) // Corrected port name
-  );
+    // Instantiation of ALU_UsingAlwaysComb
+    ALU_UsingAlwaysComb alu_comb(
+        .A(a),
+        .B(b),
+        .ALUControl(alucontrol),
+        .Carry(carry2),
+        .Zero(zero2),
+        .Negative(negative2),
+        .Overflow(overflow2),
+        .ALUResult(results2)
+    );
 
-  // Initial block to apply stimulus and monitor the results
-  initial begin
-    // Open a VCD file to dump simulation waveforms
-    $dumpfile("ALU.vcd");
-    // Dump all variables from the testbench and DUT
-    $dumpvars(0, ALU_Tb);
+    initial begin
+        $dumpfile("ALU.vcd");
+        $dumpvars(0, ALU_Tb);
     
-    // Generate random test patterns for 'a', 'b', and 'alucontrol'
-    for (int i = 0; i < 10; i++) begin
-      a = $urandom_range(0, 32'h3F);  // Assign random 32-bit values to 'a'
-      b = $urandom_range(0, 32'h3F);  // Assign random 32-bit values to 'b'
-      alucontrol = $urandom_range(0, 8);    // Assign random 3-bit values to 'alucontrol'
-      #10;                                  // Wait for 10 time units for each test pattern
+        // Generate random test patterns for 'a', 'b' and 'alucontrol'
+        for (int i = 0; i < 10; i++) begin
+            a = $urandom_range(0, 32'hFF);  // Assign random 32-bit values to 'a'
+            b = $urandom_range(0, 32'hF);  // Assign random 32-bit values to 'b'
+            alucontrol = $urandom_range(0, 3'h7); // Assign random 3-bit values to 'alucontrol'
+            #10;  // Wait for 10 time units for each test pattern
+        end
+        
+        // End the simulation
+        $finish();
     end
-    
-    // End the simulation
-    $finish();
-  end
 
 endmodule
