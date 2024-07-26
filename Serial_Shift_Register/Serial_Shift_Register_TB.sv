@@ -1,3 +1,7 @@
+// Testbench for the 4-bit Serial Shift Register
+// Here is the link where you can directly run this code on the EDA Playground Online Platform:
+// https://www.edaplayground.com/x/Wqmz
+
 module Serial_Shift_Register_Tb();
     logic clk, rst_l, serial_in;    // Testbench signals
     logic [3:0] serial_out;         // Output from the DUT

@@ -1,3 +1,7 @@
+// Design for a 4-bit Serial Shift Register
+// Here is the link where you can directly run this code on the EDA Playground Online Platform:
+// https://www.edaplayground.com/x/Wqmz
+
 module Serial_Shift_Register(
     input Clk,           // Clock input
     input Rst_l,         // Active-low reset

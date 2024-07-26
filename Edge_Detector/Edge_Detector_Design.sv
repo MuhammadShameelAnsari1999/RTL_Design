@@ -1,3 +1,7 @@
+// Design for an Edge Detector
+// Here is the link where you can directly run this code on the EDA Playground Online Platform:
+// https://www.edaplayground.com/x/X3kS
+
 // Module definition for edge detection with synchronous clocking and asynchronous reset
 module Edge_Detector(
   input logic Clk,          // Clock input

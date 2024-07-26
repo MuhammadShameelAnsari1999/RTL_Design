@@ -1,3 +1,7 @@
+// Testbench for the Odd Counter
+// Here is the link where you can directly run this code on the EDA Playground Online Platform:
+// https://www.edaplayground.com/x/MbTz
+
 module Odd_Counter_Tb();
     logic clk, rst_l;        // Clock and reset signals
     logic [31:0] count;      // Counter output from DUT

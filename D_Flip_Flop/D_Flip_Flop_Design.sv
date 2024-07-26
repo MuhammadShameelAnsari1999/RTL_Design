@@ -1,3 +1,7 @@
+// Design for a D Flip Flop
+// Here is the link where you can directly run this code on the EDA Playground Online Platform:
+// https://www.edaplayground.com/x/jFMZ
+
 // Module definition for a 4-bit synchronous D Flip-Flop with synchronous and asynchronous reset
 module D_Flip_Flop(Clk, Rst_l, D, Q_no_rst, Q_sync, Q_async);
 

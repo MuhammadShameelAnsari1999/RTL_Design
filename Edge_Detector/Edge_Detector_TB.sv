@@ -1,3 +1,7 @@
+// Testbench for the Edge Detector
+// Here is the link where you can directly run this code on the EDA Playground Online Platform:
+// https://www.edaplayground.com/x/X3kS
+
 // Testbench module for the Edge_Detector module
 module Edge_Detector_Tb();
 

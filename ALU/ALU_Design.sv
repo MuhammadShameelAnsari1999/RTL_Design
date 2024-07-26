@@ -1,3 +1,7 @@
+// Design for a 32-bit ALU
+// Here is the link where you can directly run this code on the EDA Playground Online Platform:
+// https://www.edaplayground.com/x/MbSE
+
 // Module definition for ALU with various operations (ALU using assign statements)
 module ALU_UsingAssign(
   input [31:0] A, B,         // 32-bit data inputs A and B

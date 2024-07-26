@@ -1,3 +1,7 @@
+// Testbench for the 32-bit ALU
+// Here is the link where you can directly run this code on the EDA Playground Online Platform:
+// https://www.edaplayground.com/x/MbSE
+
 // Testbench for both ALU modules
 module ALU_Tb ();
     logic [31:0] a, b;

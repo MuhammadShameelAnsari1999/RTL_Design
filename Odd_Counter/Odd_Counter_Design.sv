@@ -1,3 +1,7 @@
+// Design for a Odd Counter
+// Here is the link where you can directly run this code on the EDA Playground Online Platform:
+// https://www.edaplayground.com/x/MbTz
+
 module Odd_Counter(
     input Clk, Rst_l,       // Clock and active-low reset inputs
     output logic [31:0] Count // 32-bit counter output
