@@ -14,7 +14,7 @@ module Load_Value_Counter_Tb #(
     logic [WIDTH-1:0] count;      // Counter output
 
     // Instantiate the Load_Value_Counter module
-    Load_Value_Counter #(.WIDTH(WIDTH)) dut (
+    Load_Value_Counter dut (
         .Clk(clk),
         .Rst_l(rst_l),
         .Load_Value_Valid(load_value_valid),
@@ -45,13 +45,13 @@ module Load_Value_Counter_Tb #(
         load_value = 4'hA;        // Set load value to 10
         #10;                      // Wait for 10 time units
         load_value_valid = 1'b0;  // Deassert load value valid
-        #100;                     // Wait for 100 time units
+        #150;                     // Wait for 100 time units
 
         load_value_valid = 1'b1;  // Assert load value valid
         load_value = 4'h5;        // Set load value to 5
         #10;                      // Wait for 10 time units
         load_value_valid = 1'b0;  // Deassert load value valid
-        #100;                     // Wait for 100 time units
+        #150;                     // Wait for 100 time units
 
         $finish;  // End the simulation
     end
